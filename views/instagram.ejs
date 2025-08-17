@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Dynamic EJS Page</title>
+        <style>
+            img{
+                height: 200px;
+                width: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>This page is belong to <%= data.name %></h2>
+        <button>Follow</button>
+        <button>Message</button>
+
+        <h4>Followers: <%=data.followers %></h4>
+        <h4>Following: <%= data.following%></h4>
+        <hr>
+        <% for(let post of data.posts){ %>
+            <img src="<%=post.image %>"/>
+            <p>Likes: <%= post.likes %>  &nbsp; &nbsp; &nbsp; Commetns: <%=post.comments %></p>
+            <%} %>
+    </body>
+</html>
